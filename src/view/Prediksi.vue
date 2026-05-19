@@ -3,22 +3,24 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+
+// 1. Variabel penampung data formulir kuesioner
 const formData = ref({
   umur: '', gender: '', tahunAkademik: '',
   jamBelajar: '', tekananUjian: '', ipk: '', ekspektasiKeluarga: '',
   anxietyScore: '', depressionScore: '', jamTidur: '', aktivitasFisik: '', screenTime: '',
-  internetUsage: '', 
-  socialSupport: '', financialStress: '',
-  burnoutScore: '',  
-  mentalHealthIndex: '' 
+  internetUsage: '', socialSupport: '', financialStress: '',
+  burnoutScore: '', mentalHealthIndex: '' 
 })
 
+// 🟢 PERBAIKAN 1: Deklarasikan variabel hasil prediksi agar tidak memicu crash JavaScript
+const predictionResult = ref(null)
+const loading = ref(false)
 
 const validasiInput = (fitur, min, max) => {
   let nilai = formData.value[fitur];
-
   if (nilai === '' || nilai === null || nilai === undefined) return;
- 
+  
   let angka = parseFloat(nilai);
   if (isNaN(angka)) return;
 
@@ -33,31 +35,44 @@ const validasiInput = (fitur, min, max) => {
 }
 
 const handleAnalyze = async () => {
-  
+
   if (!formData.value.umur || !formData.value.gender || !formData.value.tahunAkademik) {
     alert('Mohon lengkapi data kuesioner Anda untuk dianalisis!')
     return
   }
 
- const urlStreamlit = "[https://stress-predict-ml-api.streamlit.app/](https://stress-predict-ml-api.streamlit.app)";
+  const urlHf = "https://gracehdyc-stress-predict-api.hf.space" 
+  
+  loading.value = true
+  
+  try {
 
-const payloadString = encodeURIComponent(JSON.stringify(formData.value));
+    const response = await fetch(`${urlHf}/api/predict`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData.value) 
+    })
+    
+    if (!response.ok) throw new Error(`Server Error dengan status: ${response.status}`)
+    
+    const result = await response.json()
+    predictionResult.value = result 
+    
+  
+    console.log("Hasil Analisis Berhasil Terbuka:", result)
+    alert(`Analisis Berhasil! Status Stres Anda: ${result.status}`)
+    
+  } catch (error) {
+    console.error("Gagal terkoneksi ke Hugging Face FastAPI:", error)
+    alert("Gagal terhubung ke server prediksi AI. Pastikan Space Hugging Face kamu berstatus 'Running'.")
+  } finally {
+    loading.value = false
+  }
+}
 
-try {
-  const response = await fetch(`${urlStreamlit}/?payload=${payloadString}`, {
-    method: 'GET',
-    headers: { 'Accept': 'application/json' }
-  });
-  
-  if (!response.ok) throw new Error("Server Streamlit Error");
-  
-  const result = await response.json();
-  
-  predictionResult.value = result; 
-} catch (error) {
-  console.error("Gagal terkoneksi ke Streamlit Cloud:", error);
-}
-}
 
 const IkonPetir = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'
 </script>
