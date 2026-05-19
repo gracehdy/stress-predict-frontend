@@ -60,7 +60,10 @@ const handleAnalyze = async () => {
     
     const result = await response.json()
     predictionResult.value = result 
-    
+    router.push({
+      path: '/hasil-prediksi',
+      query: { data: JSON.stringify(result) }
+    })
   
     console.log("Hasil Analisis Berhasil Terbuka:", result)
     alert(`Analisis Berhasil! Status Stres Anda: ${result.status}`)
