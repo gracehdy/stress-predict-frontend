@@ -62,12 +62,9 @@ const handleAnalyze = async () => {
     predictionResult.value = result 
     router.push({
       path: '/hasil-prediksi',
-      query: { data: JSON.stringify(result) }
+      state: { dataPrediksi: result }
     })
-  
-    console.log("Hasil Analisis Berhasil Terbuka:", result)
-    alert(`Analisis Berhasil! Status Stres Anda: ${result.status}`)
-    
+
   } catch (error) {
     console.error("Gagal terkoneksi ke Hugging Face FastAPI:", error)
     alert("Gagal terhubung ke server prediksi AI. Pastikan Space Hugging Face kamu berstatus 'Running'.")
