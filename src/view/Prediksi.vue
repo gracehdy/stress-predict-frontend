@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-// 1. Variabel penampung data formulir kuesioner
+
 const formData = ref({
   umur: '', gender: '', tahunAkademik: '',
   jamBelajar: '', tekananUjian: '', ipk: '', ekspektasiKeluarga: '',
@@ -13,7 +13,7 @@ const formData = ref({
   burnoutScore: '', mentalHealthIndex: '' 
 })
 
-// 🟢 PERBAIKAN 1: Deklarasikan variabel hasil prediksi agar tidak memicu crash JavaScript
+
 const predictionResult = ref(null)
 const loading = ref(false)
 
