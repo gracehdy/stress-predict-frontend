@@ -92,7 +92,7 @@ const IkonPetir = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
       </nav>
       <div class="hero-center container">
         <h1>Prediksi Tingkat Stress</h1>
-        <p>Isi formulir berikut untuk mendapatkan analisis stres berbasis machine learning</p>
+        <p>Isi formulir berikut untuk mendapatkan analisis stres berbasis machine learning!</p>
       </div>
     </header>
 
@@ -106,19 +106,19 @@ const IkonPetir = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
               <div class="input-block">
                 <label>Umur</label>
                 <div class="scale-label text-muted-grey"><span>Rentang: 15 - 50 tahun</span></div>
-                <input v-model.number="formData.umur" type="number" min="15" max="50" autocomplete="off" @blur="validasiInput('umur', 15, 50)" placeholder="Contoh: 21" />
+                <input v-model.number="formData.umur" type="number" min="15" max="50" autocomplete="off" @blur="validasiInput('umur', 15, 50)" placeholder="Masukkan umur (15-50)" />
               </div>
               <div class="input-block">
-                <label>Gender</label>
+                <label>Jenis Kelamin</label>
                 <div class="scale-label text-muted-grey"><span>Pilih salah satu</span></div>
                 <select v-model="formData.gender">
-                  <option value="" disabled selected>Pilih Gender</option>
+                  <option value="" disabled selected>Pilih Jenis Kelamin</option>
                   <option value="Laki-laki">Laki-laki</option>
                   <option value="Perempuan">Perempuan</option>
                 </select>
               </div>
               <div class="input-block">
-                <label>Tahun Academic</label>
+                <label>Tahun Akademik</label>
                 <div class="scale-label text-muted-grey"><span>Tingkat angkatan kuliah</span></div>
                 <select v-model="formData.tahunAkademik">
                   <option value="" disabled selected>Pilih Tahun Akademik</option>
@@ -136,59 +136,59 @@ const IkonPetir = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
             <div class="grid-2">
               <div class="input-block">
                 <label>Jam Belajar per Hari</label>
-                <div class="scale-label text-muted-grey"><span>0</span><span>24 jam</span></div>
-                <input v-model.number="formData.jamBelajar" type="number" min="0" max="24" autocomplete="off" @blur="validasiInput('jamBelajar', 0, 24)" placeholder="Jam" />
+                <div class="scale-label text-muted-grey"><span>Rentang: 0 - 24 jam</span></div>
+                <input v-model.number="formData.jamBelajar" type="number" min="0" max="24" autocomplete="off" @blur="validasiInput('jamBelajar', 0, 24)" placeholder="Masukkan jumlah jam (0-24)" />
               </div>
               <div class="input-block">
                 <label>Tekanan Ujian</label>
-                <div class="scale-label text-muted-grey"><span>1 = sangat rendah, 10 = sangat tinggi</span></div>
-                <input v-model.number="formData.tekananUjian" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('tekananUjian', 1, 10)" placeholder="Skala 1-10" />
+                <div class="scale-label text-muted-grey"><span>Skala: 1 (Rendah) - 10 (Tinggi)</span></div>
+                <input v-model.number="formData.tekananUjian" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('tekananUjian', 1, 10)" placeholder="Masukkan skala (1-10)" />
               </div>
               <div class="input-block">
                 <label>Performa Akademik (IPK)</label>
-                <div class="scale-label text-muted-grey"><span>Skala: 1.00</span><span>4.00</span></div>
-                <input v-model.number="formData.ipk" type="number" min="1.0" max="4.0" step="0.01" autocomplete="off" @blur="validasiInput('ipk', 1.0, 4.0)" placeholder="Contoh: 3.5" />
+                <div class="scale-label text-muted-grey"><span>Rentang: 1.00 - 4.00</span></div>
+                <input v-model.number="formData.ipk" type="number" min="1.0" max="4.0" step="0.01" autocomplete="off" @blur="validasiInput('ipk', 1.0, 4.0)" placeholder="Masukkan IPK (1.00-4.00)" />
               </div>
               <div class="input-block">
                 <label>Ekspektasi Keluarga</label>
-                <div class="scale-label text-muted-grey"><span>1 = rendah, 10 = sangat tinggi</span></div>
-                <input v-model.number="formData.ekspektasiKeluarga" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('ekspektasiKeluarga', 1, 10)" placeholder="Skala 1-10" />
+                <div class="scale-label text-muted-grey"><span>Skala: 1 (Rendah) - 10 (Tinggi)</span></div>
+                <input v-model.number="formData.ekspektasiKeluarga" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('ekspektasiKeluarga', 1, 10)" placeholder="Masukkan skala (1-10)" />
               </div>
             </div>
           </div>
 
           <div class="form-group-section">
-            <h3 class="section-form-title border-green text-soft-green">3. Mental & Lifestyle</h3>
+            <h3 class="section-form-title border-green text-soft-green">3. Mental & Gaya Hidup</h3>
             <div class="grid-2">
               <div class="input-block">
-                <label>Anxiety Score</label>
-                <div class="scale-label text-muted-grey"><span>1 = tidak cemas, 10 = sangat cemas</span></div>
-                <input v-model.number="formData.anxietyScore" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('anxietyScore', 1, 10)" placeholder="Skala 1-10" />
+                <label>Skor Kecemasan</label>
+                <div class="scale-label text-muted-grey"><span>Skala: 1 (Tidak Cemas) - 10 (Sangat Cemas)</span></div>
+                <input v-model.number="formData.anxietyScore" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('anxietyScore', 1, 10)" placeholder="Masukkan skala (1-10)" />
               </div>
               <div class="input-block">
-                <label>Depression Score</label>
-                <div class="scale-label text-muted-grey"><span>1 = tidak depresi, 10 = sangat depresi</span></div>
-                <input v-model.number="formData.depressionScore" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('depressionScore', 1, 10)" placeholder="Skala 1-10" />
+                <label>Skor Depresi</label>
+                <div class="scale-label text-muted-grey"><span>Skala: 1 (Tidak Depresi) - 10 (Sangat Depresi)</span></div>
+                <input v-model.number="formData.depressionScore" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('depressionScore', 1, 10)" placeholder="Masukkan skala (1-10)" />
               </div>
               <div class="input-block">
                 <label>Jam Tidur per Malam</label>
-                <div class="scale-label text-muted-grey"><span>0</span><span>24 jam</span></div>
-                <input v-model.number="formData.jamTidur" type="number" min="0" max="24" autocomplete="off" @blur="validasiInput('jamTidur', 0, 24)" placeholder="Jam" />
+                <div class="scale-label text-muted-grey"><span>Skala: 0 (Tidak Tidur) - 24 (24 Jam)</span></div>
+                <input v-model.number="formData.jamTidur" type="number" min="0" max="24" autocomplete="off" @blur="validasiInput('jamTidur', 0, 24)" placeholder="Masukkan jumlah jam (0-24)" />
               </div>
               <div class="input-block">
                 <label>Aktivitas Fisik per Minggu</label>
-                <div class="scale-label text-muted-grey"><span>0</span><span>7 hari aktif</span></div>
-                <input v-model.number="formData.aktivitasFisik" type="number" min="0" max="7" autocomplete="off" @blur="validasiInput('aktivitasFisik', 0, 7)" placeholder="Hari aktif" />
+                <div class="scale-label text-muted-grey"><span>Rentang: 0 - 7 hari</span></div>
+                <input v-model.number="formData.aktivitasFisik" type="number" min="0" max="7" autocomplete="off" @blur="validasiInput('aktivitasFisik', 0, 7)" placeholder="Masukkan jumlah hari (0-7)" />
               </div>
               <div class="input-block">
-                <label>Screen Time per Hari</label>
-                <div class="scale-label text-muted-grey"><span>0</span><span>24 jam</span></div>
-                <input v-model.number="formData.screenTime" type="number" min="0" max="24" autocomplete="off" @blur="validasiInput('screenTime', 0, 24)" placeholder="Jam di depan layar" />
+                <label>Waktu Layar (Screen Time) per Hari</label>
+                <div class="scale-label text-muted-grey"><span>Rentang: 0 - 24 jam</span></div>
+                <input v-model.number="formData.screenTime" type="number" min="0" max="24" autocomplete="off" @blur="validasiInput('screenTime', 0, 24)" placeholder="Masukkan jumlah jam (0-24)" />
               </div>
               <div class="input-block">
-                <label>Penggunaan Internet Umum per Hari</label>
-                <div class="scale-label text-muted-grey"><span>0</span><span>24 jam</span></div>
-                <input v-model.number="formData.internetUsage" type="number" min="0" max="24" autocomplete="off" @blur="validasiInput('internetUsage', 0, 24)" placeholder="Jam berselancar internet" />
+                <label>Penggunaan Internet per Hari</label>
+                <div class="scale-label text-muted-grey"><span>Rentang: 0 - 24 jam</span></div>
+                <input v-model.number="formData.internetUsage" type="number" min="0" max="24" autocomplete="off" @blur="validasiInput('internetUsage', 0, 24)" placeholder="Masukkan jumlah jam (0-24)" />
               </div>
             </div>
           </div>
@@ -197,23 +197,23 @@ const IkonPetir = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
             <h3 class="section-form-title border-purple text-soft-purple">4. Sosial & Finansial + Indeks Khusus</h3>
             <div class="grid-2">
               <div class="input-block">
-                <label>Social Support</label>
-                <div class="scale-label text-muted-grey"><span>1 = tidak ada dukungan, 10 = dukungan penuh</span></div>
+                <label>Dukungan Sosial</label>
+                <div class="scale-label text-muted-grey"><span>Skala: 1 (Tidak Ada) - 10 (Penuh)</span></div>
                 <input v-model.number="formData.socialSupport" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('socialSupport', 1, 10)" placeholder="Skala 1-10" />
               </div>
               <div class="input-block">
-                <label>Financial Stress</label>
-                <div class="scale-label text-muted-grey"><span>1 = tidak ada tekanan, 10 = tekanan ekstrem</span></div>
+                <label>Stres Keuangan</label>
+                <div class="scale-label text-muted-grey"><span>Skala: 1 (Tidak Ada) - 10 (Ekstrem)</span></div>
                 <input v-model.number="formData.financialStress" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('financialStress', 1, 10)" placeholder="Skala 1-10" />
               </div>
               <div class="input-block">
-                <label>Burnout Score / Skor Kelelahan</label>
-                <div class="scale-label text-muted-grey"><span>1 = sangat bugar, 10 = lelah ekstrem (burnout)</span></div>
+                <label>Skor Kejenuhan (Burnout)</label>
+                <div class="scale-label text-muted-grey"><span>Skala: 1 (Sangat Bugar) - 10 (Lelah Ekstrem)</span></div>
                 <input v-model.number="formData.burnoutScore" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('burnoutScore', 1, 10)" placeholder="Skala 1-10" />
               </div>
               <div class="input-block">
-                <label>Mental Health Index</label>
-                <div class="scale-label text-muted-grey"><span>1 = sangat buruk, 10 = sangat sehat / stabil</span></div>
+                <label>Indeks Kesehatan Mental</label>
+                <div class="scale-label text-muted-grey"><span>Skala: 1 (Sangat Buruk) - 10 (Sangat Stabil)</span></div>
                 <input v-model.number="formData.mentalHealthIndex" type="number" min="1" max="10" autocomplete="off" @blur="validasiInput('mentalHealthIndex', 1, 10)" placeholder="Skala 1-10" />
               </div>
             </div>
@@ -306,7 +306,6 @@ input, select { width: 100%; background-color: #FFFFFF; border: 1px solid #E5E7E
 .main-footer h4 { font-size: 1.125rem; font-weight: 600; margin: 0 0 24px 0; }
 .footer-links-col { display: flex; flex-direction: column; gap: 12px; }
 
-/* Menghilangkan spin button panah naik turun */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
