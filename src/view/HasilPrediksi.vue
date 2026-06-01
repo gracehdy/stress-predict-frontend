@@ -114,7 +114,7 @@ const gaugeColor = computed(() => {
       </nav>
       <div class="hero-center container">
         <h1>Hasil Prediksi Stress</h1>
-        <p>Analisis mendalam kondisi mental Anda berbasis Machine Learning</p>
+        <p>Analisis kondisi mental Anda berbasis Machine Learning</p>
       </div>
     </header>
 
