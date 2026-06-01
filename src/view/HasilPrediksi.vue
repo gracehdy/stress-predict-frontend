@@ -15,7 +15,7 @@ const hasilPrediksi = ref({
 onMounted(() => {
   if (history.state && history.state.dataPrediksi) {
     hasilPrediksi.value = history.state.dataPrediksi;
-    const sessionId = hasilPrediksi.value.sessionId;
+    const sessionId = hasilPrediksi.value.sessionId || hasilPrediksi.value.session_id;
     const urlHf = "https://gracehdyc-stress-predict-api.hf.space";
     if (sessionId) {
       const intervalCek = setInterval(async () => {
