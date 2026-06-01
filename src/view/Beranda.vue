@@ -270,5 +270,5 @@ const IkonPlus = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
 .footer-desc { font-weight: 300; margin-top: 16px; line-height: 1.6; }
 .main-footer h4 { font-size: 1.125rem; font-weight: 600; margin: 0 0 24px 0; }
 .footer-links-col { display: flex; flex-direction: column; gap: 12px; }
-.footer-links-col a { text-decoration: none; font-weight: 500; }
+.footer-links-col a { text-decoration: underline; font-weight: 500; }
 </style>
