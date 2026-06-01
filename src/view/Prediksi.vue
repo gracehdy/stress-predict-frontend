@@ -243,7 +243,7 @@ const IkonPetir = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
         </div>
         <div>
           <h4 class="text-white">Kontak</h4>
-          <p>stresspredict@university.ac.id</p>
+          <p>stresspredict@gmail.com</p>
         </div>
       </div>
     </footer>

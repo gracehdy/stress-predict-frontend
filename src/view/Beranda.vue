@@ -70,7 +70,7 @@ const IkonPlus = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
     <section class="section-content-wide bg-cream">
       <div class="container">
         <h2 class="block-main-title text-mint">Fitur Unggulan</h2>
-        <p class="block-main-subtitle text-charcoal">Empat pilar utama sistem prediksi stres mahasiswa</p>
+        <p class="block-main-subtitle text-charcoal">Empat pilar utama sistem prediksi stres mahasiswa : </p>
         <div class="grid-2">
           <div v-for="(fitur, index) in fiturUnggulan" :key="index" class="card-feature-box bg-white">
             <h3>{{ fitur.title }}</h3>
@@ -116,7 +116,7 @@ const IkonPlus = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
     <section class="section-content-wide bg-white">
       <div class="container">
         <h2 class="block-main-title text-mint">Target Pengguna</h2>
-        <p class="block-main-subtitle text-charcoal">Platform ini dirancang untuk berbagai pemangku kepentingan di ekosistem pendidikan</p>
+        <p class="block-main-subtitle text-charcoal">Platform ini dibuat untuk berbagai pihak yang terlibat dalam ekosistem pendidikan.</p>
         <div class="grid-4">
           <div v-for="(target, index) in targetPengguna" :key="index" class="card-target-box bg-cream">
             <p class="target-box-text text-charcoal">{{ target.title }}</p>
@@ -128,7 +128,7 @@ const IkonPlus = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
     <section class="section-cta-footer">
       <div class="container cta-inner-wrapper text-white">
         <h2>Siap Mengetahui Tingkat Stres Anda?</h2>
-        <p>Isi form prediksi sederhana dan dapatkan analisis mendalam tentang kondisi mental Anda sekarang juga.</p>
+        <p>Isi form prediksi sederhana dan dapatkan analisis mendalam tentang kondisi mental Anda!</p>
         <router-link to="/prediksi" class="btn-cta-white text-mint">Mulai Prediksi Sekarang</router-link>
       </div>
     </section>
@@ -147,7 +147,7 @@ const IkonPlus = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
         </div>
         <div>
           <h4 class="text-white">Kontak</h4>
-          <p>stresspredict@university.ac.id</p>
+          <p>stresspredict@gmail.com</p>
         </div>
       </div>
     </footer>

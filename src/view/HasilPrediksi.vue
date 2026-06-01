@@ -177,7 +177,7 @@ const gaugeColor = computed(() => {
         </div>
         <div>
           <h4 class="text-white">Kontak & Sumber</h4>
-          <p>stresspredict@university.ac.id</p>
+          <p>stresspredict@gmail.com</p>
         </div>
       </div>
     </footer>
