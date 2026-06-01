@@ -15,6 +15,24 @@ const hasilPrediksi = ref({
 onMounted(() => {
   if (history.state && history.state.dataPrediksi) {
     hasilPrediksi.value = history.state.dataPrediksi;
+    const sessionId = hasilPrediksi.value.sessionId;
+    const urlHf = "https://gracehdyc-stress-predict-api.hf.space";
+    if (sessionId) {
+      const intervalCek = setInterval(async () => {
+        try {
+          const response = await fetch(`${urlHf}/api/recommendation/${sessionId}`);
+          if (response.ok) {
+            const dataRes = await response.json();
+            if (dataRes.ready) {
+              hasilPrediksi.value.rekomendasi = dataRes.rekomendasi;
+              clearInterval(intervalCek);
+            }
+          }
+        } catch (error) {
+          console.error("Gagal memuat rekomendasi otomatis:", error);
+        }
+      }, 1000);
+    }
   } else {
     
     hasilPrediksi.value = {
